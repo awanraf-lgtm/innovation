@@ -136,13 +136,12 @@ const HomePage: React.FC = () => {
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center">
             Shop by Category
           </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {[
               { name: 'Clear Cases', icon: '🔍', count: 45 },
               { name: 'Wallet Cases', icon: '👛', count: 32 },
               { name: 'Rugged Cases', icon: '🛡️', count: 28 },
               { name: 'MagSafe Cases', icon: '🧲', count: 23 },
-
               { name: 'Accessories', icon: '📱', count: 19 }
             ].map((category) => (
               <div key={category.name} className="card p-4 text-center hover:shadow-md transition-shadow cursor-pointer group">
