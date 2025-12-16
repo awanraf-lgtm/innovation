@@ -1,0 +1,62 @@
+[
+  {
+    "PutRequest": {
+      "Item": {
+        "categoryId": {"S": "samsung-cases"},
+        "name": {"S": "Samsung Cases"},
+        "description": {"S": "Durable cases for Samsung Galaxy series"},
+        "slug": {"S": "samsung-cases"},
+        "imageUrl": {"S": "/images/categories/samsung-cases.jpg"},
+        "isActive": {"BOOL": true},
+        "displayOrder": {"N": "2"},
+        "createdAt": {"S": "2025-12-15T21:41:22Z"},
+        "updatedAt": {"S": "2025-12-15T21:41:22Z"}
+      }
+    }
+  },
+  {
+    "PutRequest": {
+      "Item": {
+        "categoryId": {"S": "accessories"},
+        "name": {"S": "Accessories"},
+        "description": {"S": "Phone accessories and add-ons"},
+        "slug": {"S": "accessories"},
+        "imageUrl": {"S": "/images/categories/accessories.jpg"},
+        "isActive": {"BOOL": true},
+        "displayOrder": {"N": "3"},
+        "createdAt": {"S": "2025-12-15T21:41:22Z"},
+        "updatedAt": {"S": "2025-12-15T21:41:22Z"}
+      }
+    }
+  },
+  {
+    "PutRequest": {
+      "Item": {
+        "categoryId": {"S": "wireless-chargers"},
+        "name": {"S": "Wireless Chargers"},
+        "description": {"S": "Fast wireless charging solutions"},
+        "slug": {"S": "wireless-chargers"},
+        "imageUrl": {"S": "/images/categories/wireless-chargers.jpg"},
+        "isActive": {"BOOL": true},
+        "displayOrder": {"N": "4"},
+        "createdAt": {"S": "2025-12-15T21:41:22Z"},
+        "updatedAt": {"S": "2025-12-15T21:41:22Z"}
+      }
+    }
+  },
+  {
+    "PutRequest": {
+      "Item": {
+        "categoryId": {"S": "screen-protectors"},
+        "name": {"S": "Screen Protectors"},
+        "description": {"S": "Tempered glass and film protectors"},
+        "slug": {"S": "screen-protectors"},
+        "imageUrl": {"S": "/images/categories/screen-protectors.jpg"},
+        "isActive": {"BOOL": true},
+        "displayOrder": {"N": "5"},
+        "createdAt": {"S": "2025-12-15T21:41:22Z"},
+        "updatedAt": {"S": "2025-12-15T21:41:22Z"}
+      }
+    }
+  }
+]

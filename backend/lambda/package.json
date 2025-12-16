@@ -1,0 +1,10 @@
+{
+  "name": "cellcase-lambda",
+  "version": "1.0.0",
+  "description": "Lambda functions for CellCase Pro API",
+  "main": "getCategories.js",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.0.0",
+    "@aws-sdk/lib-dynamodb": "^3.0.0"
+  }
+}

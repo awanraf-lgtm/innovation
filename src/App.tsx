@@ -1,13 +1,18 @@
 import { useState } from 'react';
+import { HashRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Header from './components/common/Header';
 import CartDrawer from './components/cart/CartDrawer';
+import MobileMenu from './components/common/MobileMenu';
 import HomePage from './pages/HomePage';
+import IPhoneCasesPage from './pages/iPhoneCasesPage';
 import { useCart } from './hooks/useCart';
 import './index.css';
 
-function App() {
+function AppContent() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
   
   const {
     items,
@@ -16,12 +21,13 @@ function App() {
     getItemCount,
   } = useCart();
 
-  // Note: handleAddToCart function moved to HomePage component where it's used
-
   const handleCheckout = () => {
-    // TODO: Implement checkout logic
     console.log('Proceeding to checkout...', items);
     alert('Checkout functionality will be implemented with backend integration!');
+  };
+
+  const handleNavigate = (path: string) => {
+    navigate(path);
   };
 
   return (
@@ -33,41 +39,21 @@ function App() {
         onMenuClick={() => setIsMobileMenuOpen(true)}
       />
 
-      {/* Mobile Menu Overlay - TODO: Create mobile menu component */}
-      {isMobileMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
-          onClick={() => setIsMobileMenuOpen(false)}
-        >
-          <div 
-            className="fixed left-0 top-0 h-full w-64 bg-white z-50 p-4"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-lg font-semibold">Menu</h2>
-              <button 
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="p-2 rounded-md text-gray-400 hover:text-gray-600"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            <nav className="space-y-4">
-              <a href="#" className="block py-2 text-gray-700 hover:text-primary-500">iPhone Cases</a>
-              <a href="#" className="block py-2 text-gray-700 hover:text-primary-500">Samsung Cases</a>
-              <a href="#" className="block py-2 text-gray-700 hover:text-primary-500">Accessories</a>
-              <a href="#" className="block py-2 text-gray-700 hover:text-primary-500">New Arrivals</a>
-              <a href="#" className="block py-2 text-gray-700 hover:text-primary-500">Sale</a>
-            </nav>
-          </div>
-        </div>
-      )}
+      {/* Mobile Menu */}
+      <MobileMenu
+        isOpen={isMobileMenuOpen}
+        onClose={() => setIsMobileMenuOpen(false)}
+        currentPath={location.pathname}
+        onNavigate={handleNavigate}
+      />
 
       {/* Main Content */}
       <main>
-        <HomePage />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/iphone-cases" element={<IPhoneCasesPage />} />
+          <Route path="*" element={<HomePage />} />
+        </Routes>
       </main>
 
       {/* Cart Drawer */}
@@ -94,6 +80,11 @@ function App() {
                 Quality, style, and protection in one.
               </p>
               <div className="flex space-x-4">
+                <a href="#" className="text-gray-400 hover:text-white">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                  </svg>
+                </a>
                 <a href="#" className="text-gray-400 hover:text-white">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
@@ -161,6 +152,14 @@ function App() {
         </div>
       </footer>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <HashRouter>
+      <AppContent />
+    </HashRouter>
   );
 }
 

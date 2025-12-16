@@ -1,0 +1,11 @@
+{
+  "categoryId": {"S": "iphone-cases"},
+  "name": {"S": "iPhone Cases"},
+  "description": {"S": "Premium protective cases for all iPhone models"},
+  "slug": {"S": "iphone-cases"},
+  "imageUrl": {"S": "/images/categories/iphone-cases.jpg"},
+  "isActive": {"BOOL": true},
+  "displayOrder": {"N": "1"},
+  "createdAt": {"S": "2025-12-15T21:41:22Z"},
+  "updatedAt": {"S": "2025-12-15T21:41:22Z"}
+}

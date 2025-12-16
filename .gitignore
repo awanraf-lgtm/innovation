@@ -86,3 +86,27 @@ temp/
 # Storybook build outputs
 .out
 .storybook-out
+
+# AWS Credentials and Config - NEVER commit these!
+.aws/
+aws-config.json
+*.pem
+*.key
+
+# Backend environment files
+backend/.env
+backend/aws-config.json
+backend/serverless.yml.backup
+backend/.serverless/
+backend/node_modules/
+
+# Terraform files (if used)
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+terraform.tfvars
+
+# CDK files (if used)
+cdk.out/
+cdk.context.json

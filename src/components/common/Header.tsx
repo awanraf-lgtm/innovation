@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 interface HeaderProps {
   cartItemCount?: number;
@@ -12,6 +13,7 @@ const Header: React.FC<HeaderProps> = ({
   onMenuClick 
 }) => {
   const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const location = useLocation();
 
   return (
     <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
@@ -31,9 +33,9 @@ const Header: React.FC<HeaderProps> = ({
 
           {/* Logo */}
           <div className="flex-1 flex justify-center">
-            <h1 className="text-xl font-bold text-gray-900">
+            <Link to="/" className="text-xl font-bold text-gray-900">
               CellCase<span className="text-primary-500">Pro</span>
-            </h1>
+            </Link>
           </div>
 
           {/* Cart button */}
@@ -80,25 +82,53 @@ const Header: React.FC<HeaderProps> = ({
         <div className="hidden md:flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-gray-900">
+            <Link to="/" className="text-2xl font-bold text-gray-900">
               CellCase<span className="text-primary-500">Pro</span>
-            </h1>
+            </Link>
           </div>
 
           {/* Desktop navigation */}
           <nav className="hidden lg:flex space-x-8">
-            <a href="#" className="text-gray-700 hover:text-primary-500 px-3 py-2 font-medium transition-colors">
+            <Link 
+              to="/iphone-cases" 
+              className={`px-3 py-2 font-medium transition-colors ${
+                location.pathname === '/iphone-cases' 
+                  ? 'text-primary-500 border-b-2 border-primary-500' 
+                  : 'text-gray-700 hover:text-primary-500'
+              }`}
+            >
               iPhone Cases
-            </a>
-            <a href="#" className="text-gray-700 hover:text-primary-500 px-3 py-2 font-medium transition-colors">
+            </Link>
+            <Link 
+              to="/samsung-cases" 
+              className={`px-3 py-2 font-medium transition-colors ${
+                location.pathname === '/samsung-cases' 
+                  ? 'text-primary-500 border-b-2 border-primary-500' 
+                  : 'text-gray-700 hover:text-primary-500'
+              }`}
+            >
               Samsung Cases
-            </a>
-            <a href="#" className="text-gray-700 hover:text-primary-500 px-3 py-2 font-medium transition-colors">
+            </Link>
+            <Link 
+              to="/accessories" 
+              className={`px-3 py-2 font-medium transition-colors ${
+                location.pathname === '/accessories' 
+                  ? 'text-primary-500 border-b-2 border-primary-500' 
+                  : 'text-gray-700 hover:text-primary-500'
+              }`}
+            >
               Accessories
-            </a>
-            <a href="#" className="text-gray-700 hover:text-primary-500 px-3 py-2 font-medium transition-colors">
+            </Link>
+            <Link 
+              to="/new-arrivals" 
+              className={`px-3 py-2 font-medium transition-colors ${
+                location.pathname === '/new-arrivals' 
+                  ? 'text-primary-500 border-b-2 border-primary-500' 
+                  : 'text-gray-700 hover:text-primary-500'
+              }`}
+            >
               New Arrivals
-            </a>
+            </Link>
           </nav>
 
           {/* Desktop search */}
