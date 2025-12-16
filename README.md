@@ -2,6 +2,28 @@
 
 A modern, mobile-first responsive e-commerce website for selling premium cellphone cases and accessories. Built with React, TypeScript, and Tailwind CSS.
 
+🌐 **Live Website**: https://awanraf-lgtm.github.io/innovation/  
+📂 **Repository**: https://github.com/awanraf-lgtm/innovation  
+🚀 **Status**: Live and fully functional
+
+## 🚀 Quick Start
+
+### View Live Site
+Visit **https://awanraf-lgtm.github.io/innovation/** to see the live website
+
+### Local Development
+```bash
+git clone https://github.com/awanraf-lgtm/innovation.git
+cd cellcase-pro
+npm install
+npm run dev
+```
+
+### Deploy Changes
+```bash
+npm run deploy
+```
+
 ## 🚀 Features
 
 ### Mobile-First Design
@@ -11,10 +33,12 @@ A modern, mobile-first responsive e-commerce website for selling premium cellpho
 - **Fast Loading**: Optimized images and efficient component structure
 
 ### E-commerce Functionality
-- **Product Catalog**: Grid layout with product cards showing images, prices, and ratings
+- **Product Catalog**: 5 featured phone cases with detailed information
 - **Shopping Cart**: Side drawer cart with quantity controls and real-time updates
-- **Local Storage**: Cart persistence across browser sessions
+- **Local Storage**: Cart persistence across browser sessions  
+- **Categories**: 5 product categories (Clear, Wallet, Rugged, MagSafe, Accessories)
 - **Search Interface**: Mobile-optimized search with intuitive UX
+- **Product Features**: Ratings, reviews, color variants, pricing with discounts
 
 ### User Experience
 - **Modern UI/UX**: Clean design with consistent styling using Tailwind CSS
@@ -27,9 +51,11 @@ A modern, mobile-first responsive e-commerce website for selling premium cellpho
 - **Frontend Framework**: React 18 with TypeScript
 - **Styling**: Tailwind CSS for responsive design
 - **Build Tool**: Vite for fast development and building  
-- **State Management**: React hooks and custom cart hook
+- **State Management**: React hooks and custom cart hook (useCart)
 - **Icons**: Heroicons via inline SVG
 - **Fonts**: Inter font family from Google Fonts
+- **Deployment**: GitHub Pages with gh-pages package
+- **Version Control**: Git with automated deployment workflow
 
 ## 📁 Project Structure
 
@@ -83,7 +109,9 @@ cellcase-pro/
 ### Available Scripts
 
 - `npm run dev` - Start development server
-- `npm run build` - Build for production
+- `npm run build` - Build for production  
+- `npm run build-pages` - Build for GitHub Pages deployment
+- `npm run deploy` - Deploy to GitHub Pages (live site)
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint for code quality
 
@@ -141,23 +169,42 @@ The frontend is structured to easily integrate with a backend API:
 - Secure payment forms
 - Order confirmation and tracking
 
-## 🚀 Deployment
+## 🚀 Live Deployment
 
-### Build for Production
+### Current Deployment
+**Live URL**: https://awanraf-lgtm.github.io/innovation/  
+**Hosting**: GitHub Pages  
+**Auto-Deploy**: Enabled via `npm run deploy`  
+
+### GitHub Pages Setup
+The website is automatically deployed to GitHub Pages using the `gh-pages` package:
+
+1. **Repository Settings**: Configured to serve from `gh-pages` branch
+2. **Build Process**: Uses Vite with relative path configuration
+3. **Deployment**: Automated via `npm run deploy` command
+
+### Deploy Updates
 ```bash
-npm run build
+# Deploy to live site
+npm run deploy
 ```
 
-The build output will be in the `dist/` folder, ready for deployment to:
+This command:
+- Builds the project with correct base paths
+- Pushes to gh-pages branch  
+- Updates the live website automatically
+
+### Alternative Deployments
+The project can also be deployed to:
 - **Netlify**: Drag and drop the dist folder
 - **Vercel**: Connect your repository for automatic deployments  
 - **Traditional Hosting**: Upload dist folder contents to web server
 
-### Environment Variables
-For production deployment, set up environment variables for:
-- API base URL
-- Payment gateway keys
-- Analytics tracking IDs
+### Build for Production
+```bash
+npm run build          # Standard build
+npm run build-pages    # Build with GitHub Pages paths
+```
 
 ## 🤝 Contributing
 
