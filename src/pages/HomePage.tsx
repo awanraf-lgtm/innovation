@@ -96,23 +96,6 @@ const HomePage: React.FC = () => {
         rating: 4.3,
         reviewCount: 67,
         tags: ['minimalist']
-      },
-      {
-        id: '6',
-        name: 'Glitter Sparkle Case - iPhone 15',
-        description: 'Stylish glitter design with reliable protection',
-        price: 22.99,
-        images: ['/placeholder-case.jpg'],
-        category: 'fashion-cases',
-        brand: 'CellCase Pro',
-        model: 'iPhone 15',
-        colors: ['Pink Glitter', 'Silver Glitter', 'Gold Glitter'],
-        materials: ['TPU', 'Glitter'],
-        features: ['Fashion Design', 'Drop Protection', 'Easy Grip'],
-        inStock: true,
-        rating: 4.4,
-        reviewCount: 94,
-        tags: ['fashion']
       }
     ];
 
@@ -159,7 +142,7 @@ const HomePage: React.FC = () => {
               { name: 'Wallet Cases', icon: '👛', count: 32 },
               { name: 'Rugged Cases', icon: '🛡️', count: 28 },
               { name: 'MagSafe Cases', icon: '🧲', count: 23 },
-              { name: 'Fashion Cases', icon: '✨', count: 67 },
+
               { name: 'Accessories', icon: '📱', count: 19 }
             ].map((category) => (
               <div key={category.name} className="card p-4 text-center hover:shadow-md transition-shadow cursor-pointer group">
