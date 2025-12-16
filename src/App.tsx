@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Header from './components/common/Header';
 import CartDrawer from './components/cart/CartDrawer';
 import HomePage from './pages/HomePage';
@@ -11,18 +11,12 @@ function App() {
   
   const {
     items,
-    addItem,
     updateQuantity,
     removeItem,
-    clearCart,
-    getTotal,
     getItemCount,
   } = useCart();
 
-  const handleAddToCart = (productId: string, name: string, price: number, image: string, color: string = 'Default') => {
-    addItem(productId, name, price, image, color);
-    // Optional: Show success message or animation
-  };
+  // Note: handleAddToCart function moved to HomePage component where it's used
 
   const handleCheckout = () => {
     // TODO: Implement checkout logic

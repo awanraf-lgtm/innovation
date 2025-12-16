@@ -190,11 +190,8 @@ const HomePage: React.FC = () => {
             products={products} 
             loading={loading}
             onAddToCart={(productId) => {
-              const product = products.find(p => p.id === productId);
-              if (product) {
-                // This will be handled by the parent component
-                console.log('Add to cart:', product);
-              }
+              // This will be connected to cart functionality later
+              console.log('Add to cart:', productId);
             }}
             onQuickView={(productId) => {
               console.log('Quick view:', productId);
